@@ -1,6 +1,14 @@
 import {useState } from 'react'
 
 function Weather() {
+  
+  const [zipCode, setZipCode] = useState('')
+
+  const handlefunc = (e) =>{
+    e.preventDefault()
+    console.log("Submitted zip code :" , zipCode)
+  }
+
   return (
     <>
       <div className="weather">
@@ -8,7 +16,7 @@ function Weather() {
       </div>
       <div className="zipcode-form">
           <form onSubmit={handlefunc}>
-            <input type = "text" value = {zipcode}
+            <input type = "text" value = {zipCode} onChange={(e) => setZipCode(e.target.value)}
                 placeholder = "Enter zip code">
             </input>
             <button type='submite'> Get Weather</button>
