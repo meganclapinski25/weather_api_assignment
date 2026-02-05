@@ -1,4 +1,5 @@
 import {useState } from 'react'
+import WeatherCard from './WeatherCard'
 import './Weather.css'
 function Weather() {
   
@@ -40,6 +41,7 @@ function Weather() {
             <button type='submite'> Get Weather</button>
           </form>
       </div>
+      {weatherData && <WeatherCard weatherData={weatherData} />}
     </>
   )
 }
