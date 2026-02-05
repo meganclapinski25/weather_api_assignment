@@ -7,6 +7,18 @@ function Weather() {
   const handlefunc = (e) =>{
     e.preventDefault()
     console.log("Submitted zip code :" , zipCode)
+
+    const apiKey = import.meta.env.VITE_API_KEY
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${apiKey}&units=imperial`)
+
+
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data)
+    })
+
+    .fetch
   }
 
   return (
