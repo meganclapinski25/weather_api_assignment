@@ -4,6 +4,7 @@ function Weather() {
   
   const [zipCode, setZipCode] = useState('')
 
+  const [weatherData, setWeatherData] = useState(null)
   const handlefunc = (e) =>{
     e.preventDefault()
     console.log("Submitted zip code :" , zipCode)
@@ -16,6 +17,11 @@ function Weather() {
     .then(res => res.json())
     .then(data =>{
       console.log(data)
+    })
+
+    .then(data => {
+      console.log(data)
+      setWeatherData(data)
     })
 
     .fetch
