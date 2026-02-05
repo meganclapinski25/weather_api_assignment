@@ -1,5 +1,5 @@
 import {useState } from 'react'
-
+import './Weather.css'
 function Weather() {
   
   const [zipCode, setZipCode] = useState('')

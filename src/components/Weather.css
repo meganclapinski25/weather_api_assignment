@@ -1,0 +1,21 @@
+.weather {
+    margin-bottom: 1.5px;
+}
+
+.weather h1{
+    margin: 0;
+    font-size: 2.5rem;
+    padding:20px;
+}
+
+.zipcode-form form{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+.zipcode-form button {
+    border: 1px black solid;
+}
+
