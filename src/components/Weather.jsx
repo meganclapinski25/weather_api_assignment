@@ -13,19 +13,13 @@ function Weather() {
     const apiKey = import.meta.env.VITE_API_KEY
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${apiKey}&units=imperial`)
-
-
     .then(res => res.json())
-    .then(data =>{
-      console.log(data)
-    })
-
     .then(data => {
       console.log(data)
       setWeatherData(data)
     })
 
-    .fetch
+    
   }
 
   return (
@@ -38,7 +32,7 @@ function Weather() {
             <input type = "text" value = {zipCode} onChange={(e) => setZipCode(e.target.value)}
                 placeholder = "Enter zip code">
             </input>
-            <button type='submite'> Get Weather</button>
+            <button type='submit'> Get Weather</button>
           </form>
       </div>
       {weatherData && <WeatherCard weatherData={weatherData} />}
