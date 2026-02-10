@@ -49,7 +49,16 @@ function Weather() {
             <button type='submit'> Get Weather</button>
           </form>
       </div>
-      {weatherData && <DisplayWeather weatherData={weatherData} />}
+      {!weatherData && !error && (
+        <p>Please enteer a zip code to see the weather.</p>
+      )}
+      {error && (
+        <p className='error'>Error: {error}</p>
+      )}
+
+      {weatherData && !error && (
+        <DisplayWeather weatherData={weatherData} />
+      )}
     </>
   )
 }
