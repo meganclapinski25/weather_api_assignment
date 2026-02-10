@@ -5,6 +5,7 @@ function DisplayWeather({ weatherData }) {
 
   return (
     <div className="weather-card">
+        <h2>Todays Weather</h2>
       <h2>{weatherData.name}</h2>
       <p className="temp">{weatherData.main.temp}</p>
       <p className="description">{weatherData.weather[0].description}</p>
