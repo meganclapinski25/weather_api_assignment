@@ -59,7 +59,7 @@ function Weather() {
 
       {weatherData && !error && (
         <>
-        <h2>Todays Weather</h2>
+        
         <DisplayWeather weatherData={weatherData.list[0]} /> 
         <DisplayForecast forecastData={weatherData} />
       </>
