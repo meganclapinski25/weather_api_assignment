@@ -6,6 +6,10 @@ function Weather() {
   const [zipCode, setZipCode] = useState('')
 
   const [weatherData, setWeatherData] = useState(null)
+
+  // Error handingling 
+
+  const [error, setError] = useState(null)
   const handlefunc = (e) =>{
     e.preventDefault()
     console.log("Submitted zip code :" , zipCode)
@@ -14,9 +18,19 @@ function Weather() {
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${apiKey}&units=imperial`)
     .then(res => res.json())
-    .then(data => {
+    
+
+    // new then to handing the codd = 200
+    .then (data =>{
       console.log(data)
-      setWeatherData(data)
+
+      if (data.cod === 200) {
+        setWeatherData(data)
+        setError(null)
+      } else {
+        setWeatherData(null)
+        setError(data.message || 'Something went Wrong')
+      }
     })
 
     
