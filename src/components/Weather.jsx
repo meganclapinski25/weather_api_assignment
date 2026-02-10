@@ -1,5 +1,6 @@
 import {useState } from 'react'
 import DisplayWeather from './DisplayWeather'
+import DisplayForecast from './DisplayForecast'
 import './Weather.css'
 function Weather() {
   
@@ -16,7 +17,7 @@ function Weather() {
 
     const apiKey = import.meta.env.VITE_API_KEY
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=${apiKey}&units=imperial`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode},us&appid=${apiKey}&units=imperial`)
     .then(res => res.json())
     
 
@@ -24,7 +25,7 @@ function Weather() {
     .then (data =>{
       console.log(data)
 
-      if (data.cod === 200) {
+      if (data.cod === 200 || data.cod === "200") {
         setWeatherData(data)
         setError(null)
       } else {
@@ -57,7 +58,10 @@ function Weather() {
       )}
 
       {weatherData && !error && (
-        <DisplayWeather weatherData={weatherData} />
+        <>
+        <DisplayWeather weatherData={weatherData.list[0]} /> 
+        <DisplayForecast forecastData={weatherData} />
+      </>
       )}
     </>
   )

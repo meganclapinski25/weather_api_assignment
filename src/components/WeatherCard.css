@@ -1,37 +1,61 @@
 .weather-card {
-    background-color: #1a1a2e;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 2rem;
-    max-width: 350px;
-    margin: 2rem auto;
-    text-align: center;
-  }
-  
-  .weather-card h2 {
-    margin-top: 0;
-    font-size: 1.8rem;
-  }
-  
-  .weather-card .temp {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0.5rem 0;
-  }
-  
-  .weather-card .description {
-    text-transform: capitalize;
-    font-size: 1.2rem;
-    color: #aaa;
-  }
-  
-  .weather-card .details {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .weather-card .details p {
-    font-size: 0.9rem;
-    color: #ccc;
-  }
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.weather-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.weather-card .temp {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -2px;
+}
+
+.weather-card .description {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.weather-card .details {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.weather-card .details p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
