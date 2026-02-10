@@ -60,7 +60,8 @@ function Weather() {
       {weatherData && !error && (
         <>
         
-        <DisplayWeather weatherData={weatherData.list[0]} /> 
+        <DisplayWeather weatherData={weatherData.list[0]} cityName={weatherData.city.name} /> 
+         
         <DisplayForecast forecastData={weatherData} />
       </>
       )}
