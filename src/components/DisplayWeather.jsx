@@ -1,12 +1,12 @@
 import './WeatherCard.css'
 
-function DisplayWeather({ weatherData }) {
+function DisplayWeather({ weatherData, cityName }) {
   if (!weatherData) return null
 
   return (
     <div className="weather-card">
         <h2>Todays Weather</h2>
-      <h2>{weatherData.name}</h2>
+        <h2>{cityName}</h2> 
       <p className="temp">{weatherData.main.temp}</p>
       <p className="description">{weatherData.weather[0].description}</p>
       <div className="details">
